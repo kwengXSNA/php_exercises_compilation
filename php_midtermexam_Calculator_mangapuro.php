@@ -31,7 +31,7 @@ class Calculator{
     }
 
     //e
-    function Factorial() {
+    function Factorial($fact) {
         $fact[0] = 1;
         for ($i = 1; $i <= $GLOBALS['SIZE']; $i++){
             //calculating factorial
@@ -49,8 +49,12 @@ class Calculator{
  
         $number_list = array();
         $n = count($arr);
-        $fact = factorial($fact);
+        $fact = Factorial($fact);
         ReturnFactorial($fact,$number_list,$n);
+    }
+
+    public function Prime(){
+        
     }
 
 }
