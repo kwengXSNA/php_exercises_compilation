@@ -3,7 +3,7 @@
 class Str1ng{
     // a
     public ?string $str;
-
+ 
     
     function __construct($str){
         $this->str = $str;
