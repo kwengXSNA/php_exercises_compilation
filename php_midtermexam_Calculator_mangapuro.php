@@ -32,28 +32,26 @@ class Calculator{
 
     //e
     function Factorial() {
-        $number_list[0];
+        $fact[0] = 1;
         for ($i = 1; $i <= $GLOBALS['SIZE']; $i++){
             //calculating factorial
-            $number_list[$i] = ($number_list[$i - 1] * $i) % $GLOBALS['MOD'];
+            $fact[$i] = ($fact[$i - 1] * $i) % $GLOBALS['MOD'];
         }
-        return $number_list;
-        
+
         //returning factorial of every element
-        function ReturnFactorial($number_list, $arr, $n){
+        function ReturnFactorial($fact, $number_list, $n){
             for($i = 0; $i < $n; $i++){
-                return $fact[$arr[$i]];
+                return $fact[$number_list[$i]];
             }
         }
+        
         $fact = array_fill(0,$SIZE + 1, 0);
-        $arr = array(3, 10, 200, 20, 12);
+ 
+        $number_list = array();
         $n = count($arr);
         $fact = factorial($fact);
-        ReturnFactorial($fact,$arr,$n);
+        ReturnFactorial($fact,$number_list,$n);
     }
-
-    //f
-
 
 }
 
