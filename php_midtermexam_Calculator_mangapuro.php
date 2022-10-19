@@ -1,4 +1,6 @@
 <?php
+$MOD = 1000000007;
+$SIZE = 10000;
 class Calculator{
 
     //a
@@ -19,7 +21,7 @@ class Calculator{
         $diffOfArray = $this->number_list[0] - $this->number_list[1];
         rsort($this->number_list);
         for ($i=2, $count = count($this->number_list);$i<$count; $i++) {
-            $diffOfArray = $array [$i] - $diffOfArray;
+            $diffOfArray = $this->number_list [$i] - $diffOfArray;
         }
         return $diffOfArray;
     }
@@ -31,26 +33,11 @@ class Calculator{
     }
 
     //e
-    function Factorial($fact) {
-        $fact[0] = 1;
-        for ($i = 1; $i <= $GLOBALS['SIZE']; $i++){
-            //calculating factorial
-            $fact[$i] = ($fact[$i - 1] * $i) % $GLOBALS['MOD'];
+    //returning factorial of every element
+    public function Factorial($fact, $number_list, $n){
+        for($i = 0; $i < $n; $i++){
+            return $fact[$number_list[$i]];
         }
-
-        //returning factorial of every element
-        function ReturnFactorial($fact, $number_list, $n){
-            for($i = 0; $i < $n; $i++){
-                return $fact[$number_list[$i]];
-            }
-        }
-        
-        $fact = array_fill(0,$SIZE + 1, 0);
- 
-        $number_list = array();
-        $n = count($arr);
-        $fact = Factorial($fact);
-        ReturnFactorial($fact,$number_list,$n);
     }
 
     public function Prime(){
