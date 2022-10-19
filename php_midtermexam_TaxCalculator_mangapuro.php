@@ -49,8 +49,6 @@
 <?php
 if(isset($_POST["tax_reveal"])){
     $salary = $_POST["salary"];
-    $first_name = $_POST["firstname"];
-    $last_name = $_POST["lastname"];
 }
 
 class Salary{
@@ -110,6 +108,8 @@ class Salary{
     }
 
     function display(){
+        $first_name = $_POST["firstname"];
+        $last_name = $_POST["lastname"];
 
         echo "Name: ". $this->first_name ." ". $this->last_name;
         echo "Salary: ". $this->salary;
