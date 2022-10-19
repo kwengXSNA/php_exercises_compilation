@@ -35,6 +35,7 @@ class Calculator{
     //e
     //returning factorial of every element
     public function Factorial($fact, $number_list, $n){
+        $fact = 0;
         for($i = 0; $i < $n; $i++){
             return $fact[$number_list[$i]];
         }
