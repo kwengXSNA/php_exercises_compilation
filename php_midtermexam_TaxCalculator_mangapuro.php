@@ -48,8 +48,9 @@
 
 <?php
 if(isset($_POST["tax_reveal"])){
-    $salary = $_POST["salary"];
-}
+
+    
+
 
 class Salary{
     public $first_name;
@@ -57,9 +58,8 @@ class Salary{
     public $salary;
 
     function __construct($first_name,$last_name,$salary){
-        $this->first_name = $first_name;
-        $this->last_name = $last_name;
-        $this->salary = $salary;
+
+       $_POST["salary"] =  $salary;
 
     }
 
@@ -108,14 +108,14 @@ class Salary{
     }
 
     function display(){
-        $first_name = $_POST["firstname"];
-        $last_name = $_POST["lastname"];
+        // $first_name = $_POST["firstname"];
+        // $last_name = $_POST["lastname"];
 
         echo "Name: ". $this->first_name ." ". $this->last_name;
         echo "Salary: ". $this->salary;
         echo "Withholding Tax: ".$ttl_tax;
 
     }
-
+}
 
 ?>
