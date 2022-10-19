@@ -5,7 +5,7 @@ class Calculator{
     //a property that accepts an array of numbers
     public $number_list = array();
 
-    function __construct($number_list){
+    function __construct($number_list){ 
         $this->number_list = $number_list;
     }
 
