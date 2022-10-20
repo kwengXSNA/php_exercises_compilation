@@ -48,74 +48,78 @@
 
 <?php
 if(isset($_POST["tax_reveal"])){
-
+    echo "<br><center>Name: ". $_POST['firstname'] ." ". $_POST['lastname']."</center>";
+    echo "<center>Salary: ".$_POST['salary']."</center>";
+}
+?>
     
 
+<?php
 
 class Salary{
     public $first_name;
     public $last_name;
     public $salary;
+               
+    function __construct($first_name, $last_name,$salary){
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
+        $this->salary = $salary;
 
-    function __construct($first_name,$last_name,$salary){
-
-       $_POST["salary"] =  $salary;
 
     }
+    public function getWithHoldingTax(){
 
-               
-        public function getWithHoldingTax($salary){
 
-            if ($this->salary<="20833"){
+        $salary = $_GET['salary'];
+
+            if ($salary<="20833"){
                 $ttl_tax = $this->salary -"0";
-                // return $ttl_tax;
+                echo $ttl_tax;
             }
 
-            if ($this->salary>="20833" || $this->salary<="33332"){
-                $sal_deduct = $this->salary - "20833";
+            if ($salary>="20833" || $salary<="33332"){
+                $sal_deduct = $salary - "20833";
                 $ttl_tax = $sal_deduct * "0.20";
-                // return $ttl_tax;
+                echo $ttl_tax;
             }
 
-            if ($this->salary>="33333" || $this->salary<="66666"){
-                $sal_deduct = $this->salary - "33333";
+            if ($salary>="33333" || $salary<="66666"){
+                $sal_deduct = $salary - "33333";
                 $tax = $sal_deduct*"0.25";
                 $ttl_tax = $tax + "2500";
-                // return $ttl_tax;
+                echo $ttl_tax;
             }
 
-            if ($this->salary>="66667" || $this->salary<="166666"){
-                $sal_deduct = $this->salary - "66667";
+            if ($salary>="66667" || $salary<="166666"){
+                $sal_deduct = $salary - "66667";
                 $tax = $sal_deduct*"0.30";
                 $ttl_tax = $tax + "10833.33";
-                // return $ttl_tax;
+                echo $ttl_tax;
             }
 
-            if ($this->salary>="166667" || $this->salary<="666666"){
-                $sal_deduct = $this->salary - "166667";
+            if ($salary>="166667" || $salary<="666666"){
+                $sal_deduct = $salary - "166667";
                 $tax = $sal_deduct*"0.32";
                 $ttl_tax = $tax + "40833.33";
-                // return $ttl_tax;
+                echo  $ttl_tax;
             }
             
-            if ($this->salary>="666667"){
-                $sal_deduct = $this->salary -"666667";
+            if ($salary>="666667"){
+                $sal_deduct = $salary -"666667";
                 $tax = $sal_deduct*"0.35";
                 $ttl_tax = $tax + "200833.33";
-                // return $ttl_tax;
+                echo $ttl_tax;
             }
-        }
     }
-
     function display(){
-        // $first_name = $_POST["firstname"];
-        // $last_name = $_POST["lastname"];
-
-        echo "Name: ". $this->first_name ." ". $this->last_name;
-        echo "Salary: ". $this->salary;
-        echo "Withholding Tax: ".$ttl_tax;
-
+        $display  = "Name: ". $this->first_name." ".$this->last_name; 
+        return $display;
     }
 }
+
+   
+
+
 
 ?>
